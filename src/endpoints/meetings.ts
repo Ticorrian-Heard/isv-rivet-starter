@@ -3,7 +3,7 @@ import express from 'express';
 import { parse } from 'url';
 
 export const startMeetingsEndpoints = async () => {
-    app.get('/getmeeting', async (req: express.Request, res: express.Response)=>{
+    app.get('/getmeetings', async (req: express.Request, res: express.Response)=>{
         let q = parse(req.url, true).query;
 
         if (!q.email) {
@@ -32,8 +32,7 @@ export const startMeetingsEndpoints = async () => {
         //retrieve user from db to get userId
         let user = db.data.users.find((obj) => obj.email === <string>q.email);
 
-        let request_data = req.body;
-        let body = ('body' in request_data) ? request_data.body : {};
+        let body = (req.body) ? req.body : {};
         let path = { userId: <string>user?.zoomId }
 
         try {
