@@ -32,6 +32,7 @@ The sample app follows this basic workflow for creating, retrieving, and deletin
 
 
 Once the server is running, it will listen on the specified port and you can now make REST API calls to its endpoints.
+
 User Endpoints
 - POST /localhost:port/createuser?email=<email> 
 - GET /localhost:port/getuser?email=<email>
