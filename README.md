@@ -26,9 +26,9 @@ You will need to build a [Server-to-Server](https://developers.zoom.us/docs/inte
 - Account ID
 
 ## Usage
-The sample app follows this basic workflow for creating, retrieving, and deleting Zoom custCreate users and Zoom meetings. It use lowdb as a local store for user data which can be edited in the `db.json` file. You can also replace this db with your own.
- 
+The sample app follows this basic workflow for creating, retrieving, and deleting Zoom custCreate users and Zoom meetings. It uses lowdb as a local store for user data which can be edited in the `db.json` file. You can also replace this db with your own.
 
+<img width="722" alt="Image" src="https://github.com/user-attachments/assets/0c36c078-ba23-4839-a742-622117bf3832" />
 
 
 Once the server is running, it will listen on the specified port and you can now make REST API to its endpoints.
@@ -44,3 +44,7 @@ Meetings Endpoints
 
 Utility functions
 - GET /localhost:port/signature?meetingNumber=<meetingNumber>&role=<role>
+
+
+The Server also listens for Zoom Events. You can subscribe to events on the Zoom Marketplace by going to the Server-to-Server you created, click the feature tab, select Event Subscriptions and select the events you want to subscribe to. For Rivet, you must append /zoom/events to the Endpoint URL like so:
+
