@@ -38,7 +38,8 @@ User Endpoints
 - DELETE /localhost:port/deleteuser?email=<email>
 
 Meetings Endpoints
-- POST /localhost:port/createmeeting?email=<email>   * you can provide optional request body following the [Create a Meeting api request body](https://developers.zoom.us/docs/api/meetings/#tag/meetings/POST/users/{userId}/meetings)
+- POST /localhost:port/createmeeting?email=<email>                
+   * you can provide optional request body following the [Create a Meeting api request body](https://developers.zoom.us/docs/api/meetings/#tag/meetings/POST/users/{userId}/meetings)
 - GET /localhost:port/getmeetings?email=<email>
 - DELETE /localhost:port/deletemeeting?email=<email>&meetingId=<meetingId>
 
