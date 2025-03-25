@@ -1,0 +1,5 @@
+{
+  "name": "Rivet SDK Server",
+  "description": "A server to handle authentication flows and generate secure signatures",
+  "image": "heroku/nodejs"
+}
