@@ -31,7 +31,8 @@ The sample app follows this basic workflow for creating, retrieving, and deletin
 <img width="722" alt="Image" src="https://github.com/user-attachments/assets/0c36c078-ba23-4839-a742-622117bf3832" />
 
 
-Once the server is running, it will listen on the specified port and you can now make REST API to its endpoints.
+Once the server is running, it will listen on the specified port and you can now make REST API calls to its endpoints.
+
 User Endpoints
 - POST /localhost:port/createuser?email=<email> 
 - GET /localhost:port/getuser?email=<email>
@@ -48,6 +49,7 @@ Utility functions
 
 
 ## Webhooks
-The Server also listens for Zoom Events. You can subscribe to events on the Zoom Marketplace by going to the Server-to-Server you created, click the feature tab, select Event Subscriptions and select the events you want to subscribe to. For Rivet, you must append `/zoom/events` to the Endpoint URL like so:
+The Server also listens for Zoom Events. You can subscribe to events on the Zoom Marketplace by going to the Server-to-Server you created, click the feature tab, select Event Subscriptions and select the events you want to subscribe to. In development, you will need to use ngrok or a similar service to open up your localhost for online communication with Zoom Web. For Rivet, you must append `/zoom/events` to the Endpoint URL like so:
+
 <img width="755" alt="Image" src="https://github.com/user-attachments/assets/37d4ff2a-5c39-41da-a7a4-36eb0086f93c" />
 
