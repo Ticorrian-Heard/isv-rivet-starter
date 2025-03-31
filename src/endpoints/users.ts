@@ -27,6 +27,41 @@ export const startUserEndpoints = () => {
         }
     });
 
+    app.get('/getuserzak', async (req: express.Request, res: express.Response)=>{
+      let q = parse(req.url, true).query;
+
+      if (!q.email) {
+          res.status(400).send({test_server_error: "'email' query parameter required"});
+          return;
+      }
+
+      try {
+        let user = db.data.users.find((obj) => obj.email === <string>q.email); 
+        
+        if (!user) {
+            logger.info(['user ' + q.email + ' not found in db']);
+            res.status(404).send({error: q.email + ' not found in db'});
+            return;
+        }
+
+        let path = {
+          userId: user.zoomId
+        };
+
+        let query = {
+          ttl: 60,
+          type: 'zak'
+        }
+
+        let responseData: object = await usersS2SOAuthClient.endpoints.users.getUsersToken({ path, query });
+        logger.info(['User ZAK retrieved', responseData]);
+        res.status(200).send({success: 'user zak retrieved', token: (responseData as any).data.token});
+      } catch (err) {
+          logger.error([err]);
+          res.status(500).send({test_server_error: 'check test server console log'});
+      }
+  });
+
     app.post('/createuser', async (req: express.Request, res: express.Response)=>{
        
         let q = parse(req.url, true).query;

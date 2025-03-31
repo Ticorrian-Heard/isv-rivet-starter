@@ -1,3 +1,10 @@
 {
-  "users": []
+  "users": [
+    {
+      "email": "ticotest@email.com",
+      "zoomId": "gedGSXWySc--oumjUwFx4Q",
+      "zoomEmail": "dGljb3Rlc3Q=@isv.email.com",
+      "meetings": []
+    }
+  ]
 }

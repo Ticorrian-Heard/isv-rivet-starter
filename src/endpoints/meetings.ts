@@ -2,7 +2,7 @@ import { meetingsS2SOAuthClient, logger, app, db } from '../modules.ts';
 import express from 'express';
 import { parse } from 'url';
 
-export const startMeetingsEndpoints = async () => {
+export const startMeetingsEndpoints = () => {
     app.get('/getmeetings', async (req: express.Request, res: express.Response)=>{
         let q = parse(req.url, true).query;
 
@@ -43,7 +43,7 @@ export const startMeetingsEndpoints = async () => {
           return;
         }
 
-        let body = (req.body) ? req.body : {};
+        let body = (Object.keys(req.body).length === 0) ? req.body : {};
         let path = { userId: <string>user?.zoomId }
 
         try {

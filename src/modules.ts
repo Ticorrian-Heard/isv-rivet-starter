@@ -5,6 +5,7 @@ import { startUserEndpoints } from "./endpoints/users";
 import { startUserEvents } from "./events/user_events";
 import { startMeetingsEndpoints } from "./endpoints/meetings";
 import { startMeetingsEvents } from "./events/meetings_events";
+import { startUtils } from "./endpoints/utils";
 import express from 'express';
 import dotenv from 'dotenv';
 import { JSONFileSyncPreset } from 'lowdb/node'
@@ -75,6 +76,7 @@ export const startModules = async () => {
 export const startEndpoints = () => {
     startUserEndpoints();
     startMeetingsEndpoints();
+    startUtils();
 };
 
 export const startEvents = () => {
