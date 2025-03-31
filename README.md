@@ -36,6 +36,7 @@ Once the server is running, it will listen on the specified port and you can now
 User Endpoints
 - POST /localhost:port/createuser?email=<email> 
 - GET /localhost:port/getuser?email=<email>
+- GET /localhost:port/getuserzak?email=<email>
 - DELETE /localhost:port/deleteuser?email=<email>
 
 Meetings Endpoints
@@ -47,6 +48,7 @@ Meetings Endpoints
 Utility functions
 - GET /localhost:port/signature?meetingNumber=<meetingNumber>&role=<role>
 
+[Postman Collection](https://github.com/user-attachments/files/19539429/isv_rivet_sample_api_flow.postman_collection.json.zip)
 
 ## Webhooks
 The Server also listens for Zoom Events. You can subscribe to events on the Zoom Marketplace by going to the Server-to-Server you created, click the feature tab, select Event Subscriptions and select the events you want to subscribe to. In development, you will need to use ngrok or a similar service to open up your localhost for online communication with Zoom Web. For Rivet, you must append `/zoom/events` to the Endpoint URL like so:
