@@ -13,11 +13,17 @@ export const startMeetingsEndpoints = async () => {
         
         try {
           let user = db.data.users.find((obj) => obj.email === <string>q.email);
+
+          if (!user) {
+            logger.info(['user ' + q.email + ' not found in db']);
+            res.status(404).send({error: q.email + ' not found in db'});
+            return;
+          } 
           logger.info(['meeting retrieved', user?.meetings]);
           res.status(200).send({success: 'meeting retrieved', response: user?.meetings});
         } catch (err) {
             logger.error([err]);
-            res.status(400).send({test_server_error: 'check test server console log'});
+            res.status(500).send({test_server_error: 'check test server console log'});
         }
     });
 
@@ -32,28 +38,41 @@ export const startMeetingsEndpoints = async () => {
         //retrieve user from db to get userId
         let user = db.data.users.find((obj) => obj.email === <string>q.email);
 
+        if (!user) {
+          res.status(404).send({error: q.email + ' not found in db'});
+          return;
+        }
+
         let body = (req.body) ? req.body : {};
         let path = { userId: <string>user?.zoomId }
 
         try {
           let responseData: object = await meetingsS2SOAuthClient.endpoints.meetings.createMeeting({ body, path });
-          //find user from db and add meeting
-          let meetingObj = {
-            startTime: (responseData as any).data.start_time,
-            topic: (responseData as any).data.topic,
-            meetingId: (responseData as any).data.id,
-            duration: (responseData as any).data.duration,
-            joinUrl: (responseData as any).data.join_url,
-            startUrl: (responseData as any).data.start_url,
-            password: (responseData as any).data.password
-          };
-          db.update(({ users }) => {
-            let user = users.find((obj) => obj.email === <string>q.email);
-            (user) ? user.meetings?.push(meetingObj) : logger.info(['user' + q.email + 'not found in db']);
-           });
+
+          if ((responseData as any).statusCode === 201) {
+            //find user from db and add meeting
+            let meetingObj = {
+              startTime: (responseData as any).data.start_time,
+              topic: (responseData as any).data.topic,
+              meetingId: (responseData as any).data.id,
+              duration: (responseData as any).data.duration,
+              joinUrl: (responseData as any).data.join_url,
+              startUrl: (responseData as any).data.start_url,
+              password: (responseData as any).data.password
+            };
+            db.update(({ users }) => {
+              let user = users.find((obj) => obj.email === <string>q.email);
+              if (user) user.meetings?.push(meetingObj) 
+                else {
+                  logger.info(['user' + q.email + ' not found in db'])
+                  res.status(404).send({error: q.email + ' not found in db'});
+                  return;
+                  };
+             });
+          }
 
           logger.info(['meeting created', responseData]);
-          res.status(200).send({success: 'meeting created', response: responseData});
+          res.status(200).send({success: 'meeting created'});
         } catch (err) {
             logger.error([err]);
             res.status(400).send({test_server_error: 'check test server console log'});
@@ -69,7 +88,19 @@ export const startMeetingsEndpoints = async () => {
         }
 
         let user = db.data.users.find((obj) => obj.email === <string>q.email);
-        let meetingId = user?.meetings?.find((mtg) => mtg.meetingId === parseInt(<string>q.meetingId))?.meetingId ?? -1;
+
+        if (!user) {
+          res.status(404).send({error: q.email + ' not found in db'});
+          return;
+        }
+
+        let meetingId = user?.meetings?.find((mtg) => mtg.meetingId === parseInt(<string>q.meetingId))?.meetingId;
+
+        if (!meetingId) {
+          res.status(404).send({error: 'meetingId not found in db for user: ' + user.zoomEmail});
+          return;
+        }
+
         let path = { meetingId: meetingId };
 
         try {
@@ -81,10 +112,10 @@ export const startMeetingsEndpoints = async () => {
 
           let responseData: object = await meetingsS2SOAuthClient.endpoints.meetings.deleteMeeting({ path });
           logger.info(['meeting deleted', responseData]);
-          res.status(200).send({success: 'meeting deleted'});
+          res.status((responseData as any).statusCode).send({success: 'meeting deleted'});
         } catch (err) {
             logger.error([err]);
-            res.status(400).send({test_server_error: 'check test server console log'});
+            res.status(500).send({test_server_error: 'check test server console log'});
         }
     });
 };

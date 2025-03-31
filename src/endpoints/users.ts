@@ -16,13 +16,14 @@ export const startUserEndpoints = () => {
           
           if (!user) {
               logger.info(['user ' + q.email + ' not found in db']);
+              res.status(404).send({error: q.email + ' not found in db'});
               return;
           }
 
           res.status(200).send({success: 'user retrieved', response: user});
         } catch (err) {
             logger.error([err]);
-            res.status(400).send({test_server_error: 'check test server console log'});
+            res.status(500).send({test_server_error: 'check test server console log'});
         }
     });
 
@@ -47,19 +48,23 @@ export const startUserEndpoints = () => {
     
         try {
           let responseData: object = await usersS2SOAuthClient.endpoints.users.createUsers({ body });
-          //map zoom userid and email to given user email 
-          let userObj = {
-            zoomId: (responseData as any).data.id,
-            zoomEmail: (responseData as any).data.email,
-            meetings: []
-          };
-          db.update(({ users }) => {
-            let user = users.find((obj) => obj.email === <string>q.email); 
-            (user) ? Object.assign(user, userObj) : users.push({ email: <string>q.email, ...userObj});
-           });
+
+          if ((responseData as any).statusCode === 201) {
+            //map zoom userid and email to given user email 
+            let userObj = {
+              zoomId: (responseData as any).data.id,
+              zoomEmail: (responseData as any).data.email,
+              meetings: []
+            };
+
+            db.update(({ users }) => {
+              let user = users.find((obj) => obj.email === <string>q.email); 
+              (user) ? Object.assign(user, userObj) : users.push({ email: <string>q.email, ...userObj});
+             });
+          }
 
           logger.info(['Cust User created', responseData]);
-          res.status(200).send({success: 'user created', response: responseData});
+          res.status((responseData as any).statusCode).send({success: 'user created', response: responseData});
         } catch (err) {
             logger.error([err]);
             res.status(400).send({test_server_error: 'check test server console log'});
@@ -76,8 +81,12 @@ export const startUserEndpoints = () => {
 
         let user = db.data.users.find((obj) => obj.email === <string>q.email);
 
-        console.log(user);
-        let path = { userId: <string>user?.zoomId }
+        if (!user) {
+          res.status(404).send({error: q.email + ' not found in db'});
+          return;
+        }
+        
+        let path = { userId: <string>user.zoomId }
         let query = {
             action: "delete"
         }
@@ -96,7 +105,7 @@ export const startUserEndpoints = () => {
 
           let responseData: object = await usersS2SOAuthClient.endpoints.users.deleteUser({ path, query });
           logger.info(['user deleted', responseData]);
-          res.status(200).send({success: 'user deleted'})
+          res.status((responseData as any).statusCode).send({success: 'user deleted'})
         } catch (err) {
             logger.error([err]);
             res.status(400).send({test_server_error: 'check test server console log'});

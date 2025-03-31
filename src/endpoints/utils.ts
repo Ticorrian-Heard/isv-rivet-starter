@@ -7,6 +7,11 @@ dotenv.config();
 
   app.get('/signature', (req, res) => {
     let q = parse(req.url, true).query;
+
+    if (!q.meetingNumber || !q.role) {
+      res.status(404).send({error: 'meetingNumber and role parameters required'});
+    }
+    
     const iat = Math.round((new Date().getTime() - 30000) / 1000);
     const exp = iat + 60 * 60 * 2;
     const oHeader = { alg: 'HS256', 
@@ -26,5 +31,5 @@ dotenv.config();
     const sdkJWT = KJUR.jws.JWS.sign('HS256', sHeader, sPayload, process.env.CLIENT_SECRET);
   
     logger.info(["signature generated", sdkJWT]);
-    res.status(200).send( sdkJWT );
+    res.status(201).send({ signature: sdkJWT });
   });
