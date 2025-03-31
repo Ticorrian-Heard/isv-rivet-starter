@@ -64,7 +64,7 @@ export const startUserEndpoints = () => {
           }
 
           logger.info(['Cust User created', responseData]);
-          res.status((responseData as any).statusCode).send({success: 'user created', response: responseData});
+          res.status((responseData as any).statusCode).send({success: 'user created'});
         } catch (err) {
             logger.error([err]);
             res.status(400).send({test_server_error: 'check test server console log'});
