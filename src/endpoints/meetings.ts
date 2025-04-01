@@ -42,8 +42,8 @@ export const startMeetingsEndpoints = () => {
           res.status(404).send({error: q.email + ' not found in db'});
           return;
         }
-
-        let body = (Object.keys(req.body).length === 0) ? req.body : {};
+        
+        let body = (Object.keys(req.body).length > 0) ? req.body : {};
         let path = { userId: <string>user?.zoomId }
 
         try {

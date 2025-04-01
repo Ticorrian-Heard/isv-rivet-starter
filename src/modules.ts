@@ -1,6 +1,5 @@
 import { UsersS2SAuthClient, ConsoleLogger } from "@zoom/rivet/users";
 import { MeetingsS2SAuthClient } from "@zoom/rivet/meetings";
-import { AccountsS2SAuthClient } from "@zoom/rivet/accounts";
 import { startUserEndpoints } from "./endpoints/users";
 import { startUserEvents } from "./events/user_events";
 import { startMeetingsEndpoints } from "./endpoints/meetings";
@@ -54,14 +53,6 @@ export const meetingsS2SOAuthClient = new MeetingsS2SAuthClient({
     accountId: <string>process.env.ACCOUNT_ID,
     port: exPort + 2
 });
-  
-export const accountsS2SOAuthClient = new AccountsS2SAuthClient({
-    clientId: <string>process.env.StS_CLIENT_ID,
-    clientSecret: <string>process.env.StS_CLIENT_SECRET,
-    webhooksSecretToken: <string>process.env.StS_WEBHOOK_SECRET_TOKEN,
-    accountId: <string>process.env.ACCOUNT_ID,
-    port: exPort + 3
-});
 
 export const logger = new ConsoleLogger();
 
@@ -70,7 +61,6 @@ export const logger = new ConsoleLogger();
 export const startModules = async () => {
     await usersS2SOAuthClient.start();
     await meetingsS2SOAuthClient.start();
-    await accountsS2SOAuthClient.start();
 };
 
 export const startEndpoints = () => {
