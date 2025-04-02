@@ -55,3 +55,5 @@ The Server also listens for Zoom Events. You can subscribe to events on the Zoom
 
 <img width="755" alt="Image" src="https://github.com/user-attachments/assets/37d4ff2a-5c39-41da-a7a4-36eb0086f93c" />
 
+
+Please note the Endpoint URL will need to point to the port being used by the module NOT the main server port provided in the `.env` file. For example, if the main server port is 5010, the Endpoint URL will point to 5011 for Users events, and 5012 for Meeting Events.
