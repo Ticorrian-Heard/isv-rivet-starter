@@ -1,3 +1,535 @@
 {
-  "logs": []
+  "logs": [
+    {
+      "callId": "0684067bd56d91e9675",
+      "callLogs": [
+        {
+          "phone.caller_ringing": {
+            "account_id": "6o8GJUOXSdSbq-OmeWbfEQ",
+            "object": {
+              "call_id": "0684067bd56d91e9675",
+              "caller": {
+                "name": "Ticorrian Heard",
+                "extension_id": "i7roTRA1T06uR0HiOvcCjA",
+                "extension_type": "user",
+                "user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ",
+                "timezone": "America/New_York",
+                "extension_number": 800,
+                "phone_number": "+14702763521",
+                "device_id": "ce87e7733a6d105d17d1d856955f71553da0e4edff7199ff79f00082f44f6891",
+                "device_type": "MAC_Client(6.4.6.53970)",
+                "device_name": "HW0021866",
+                "connection_type": "voip"
+              },
+              "callee": {
+                "extension_number": 12054786805,
+                "phone_number": "+12054786805",
+                "connection_type": "pstn_off_net"
+              },
+              "ringing_start_time": "2025-06-04T15:35:25Z"
+            }
+          }
+        },
+        {
+          "phone.caller_connected": {
+            "account_id": "6o8GJUOXSdSbq-OmeWbfEQ",
+            "object": {
+              "call_id": "0684067bd56d91e9675",
+              "caller": {
+                "name": "Ticorrian Heard",
+                "extension_id": "i7roTRA1T06uR0HiOvcCjA",
+                "extension_type": "user",
+                "user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ",
+                "timezone": "America/New_York",
+                "extension_number": 800,
+                "phone_number": "+14702763521",
+                "device_id": "ce87e7733a6d105d17d1d856955f71553da0e4edff7199ff79f00082f44f6891",
+                "device_type": "MAC_Client(6.4.6.53970)",
+                "device_name": "HW0021866",
+                "connection_type": "voip"
+              },
+              "callee": {
+                "extension_type": "pstn",
+                "extension_number": 12054786805,
+                "phone_number": "+12054786805",
+                "connection_type": "pstn_off_net"
+              },
+              "ringing_start_time": "2025-06-04T15:35:25Z",
+              "connected_start_time": "2025-06-04T15:35:33Z"
+            }
+          }
+        },
+        {
+          "phone.caller_ended": {
+            "account_id": "6o8GJUOXSdSbq-OmeWbfEQ",
+            "object": {
+              "call_id": "0684067bd56d91e9675",
+              "caller": {
+                "name": "Ticorrian Heard",
+                "extension_id": "i7roTRA1T06uR0HiOvcCjA",
+                "extension_type": "user",
+                "user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ",
+                "timezone": "America/New_York",
+                "extension_number": 800,
+                "phone_number": "+14702763521",
+                "device_id": "ce87e7733a6d105d17d1d856955f71553da0e4edff7199ff79f00082f44f6891",
+                "device_type": "MAC_Client(6.4.6.53970)",
+                "device_name": "HW0021866",
+                "connection_type": "voip"
+              },
+              "callee": {
+                "extension_type": "pstn",
+                "extension_number": 12054786805,
+                "phone_number": "+12054786805",
+                "connection_type": "pstn_off_net"
+              },
+              "ringing_start_time": "2025-06-04T15:35:25Z",
+              "call_end_time": "2025-06-04T15:35:41Z",
+              "connected_start_time": "2025-06-04T15:35:33Z",
+              "handup_result": "Call connected"
+            }
+          }
+        },
+        {
+          "phone.caller_call_history_completed": {
+            "account_id": "6o8GJUOXSdSbq-OmeWbfEQ",
+            "object": {
+              "call_logs": [
+                {
+                  "id": "20250604-fff0b713-1f82-48d8-83c1-3ee529e3904b",
+                  "direction": "outbound",
+                  "international": false,
+                  "event": "outgoing",
+                  "result": "connected",
+                  "node": 1,
+                  "call_id": "0684067bd56d91e9675",
+                  "connect_type": "external",
+                  "call_type": "general",
+                  "hide_caller_id": false,
+                  "caller_ext_id": "i7roTRA1T06uR0HiOvcCjA",
+                  "caller_name": "Ticorrian Heard",
+                  "caller_email": "ticorrianheardsandbox@gmail.com",
+                  "caller_did_number": "+14702763521",
+                  "caller_ext_number": "800",
+                  "caller_ext_type": "user",
+                  "caller_number_type": "zoom_pstn",
+                  "caller_device_type": "ZoomPbxPhone_MAC_Client(6.4.6.53970)",
+                  "caller_country_iso_code": "US",
+                  "caller_country_code": "1",
+                  "callee_did_number": "+12054786805",
+                  "callee_number_type": "external_pstn",
+                  "callee_country_iso_code": "US",
+                  "callee_country_code": "1",
+                  "end_to_end": false,
+                  "start_time": "2025-06-04T15:35:25Z",
+                  "answer_time": "2025-06-04T15:35:33Z",
+                  "end_time": "2025-06-04T15:35:41Z",
+                  "is_node": 1,
+                  "device_private_ip": "172.16.50.102",
+                  "device_public_ip": "38.99.100.7",
+                  "talk_time": 8,
+                  "hold_time": 0,
+                  "wait_time": 9
+                }
+              ],
+              "user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ"
+            }
+          }
+        },
+        {
+          "phone.caller_call_log_completed": {
+            "account_id": "6o8GJUOXSdSbq-OmeWbfEQ",
+            "object": {
+              "call_logs": [
+                {
+                  "id": "fff0b713-1f82-48d8-83c1-3ee529e3904b",
+                  "caller_user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ",
+                  "call_type": "pstn",
+                  "caller_number": "800",
+                  "caller_number_type": 1,
+                  "caller_name": "Ticorrian Heard",
+                  "callee_number": "+12054786805",
+                  "callee_number_type": 2,
+                  "callee_number_source": "external",
+                  "callee_location": "Alabama",
+                  "direction": "outbound",
+                  "duration": 8,
+                  "result": "Call connected",
+                  "date_time": "2025-06-04T15:35:25Z",
+                  "path": "pstn",
+                  "has_recording": false,
+                  "has_voicemail": false,
+                  "call_id": "0684067bd56d91e9675",
+                  "caller_did_number": "+14702763521",
+                  "caller_country_code": "1",
+                  "caller_country_iso_code": "US",
+                  "callee_did_number": "+12054786805",
+                  "callee_country_code": "1",
+                  "callee_country_iso_code": "US",
+                  "call_end_time": "2025-06-04T15:35:41Z",
+                  "department": "",
+                  "cost_center": ""
+                }
+              ],
+              "user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "callId": "06840743456d91ecbd8",
+      "callLogs": [
+        {
+          "phone.caller_ringing": {
+            "account_id": "6o8GJUOXSdSbq-OmeWbfEQ",
+            "object": {
+              "call_id": "06840743456d91ecbd8",
+              "caller": {
+                "name": "Ticorrian Heard",
+                "extension_id": "i7roTRA1T06uR0HiOvcCjA",
+                "extension_type": "user",
+                "user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ",
+                "timezone": "America/New_York",
+                "extension_number": 800,
+                "phone_number": "+14702763521",
+                "device_id": "ce87e7733a6d105d17d1d856955f71553da0e4edff7199ff79f00082f44f6891",
+                "device_type": "MAC_Client(6.4.6.53970)",
+                "device_name": "HW0021866",
+                "connection_type": "voip"
+              },
+              "callee": {
+                "extension_number": 12054786805,
+                "phone_number": "+12054786805",
+                "connection_type": "pstn_off_net"
+              },
+              "ringing_start_time": "2025-06-04T16:28:36Z"
+            }
+          }
+        },
+        {
+          "phone.caller_connected": {
+            "account_id": "6o8GJUOXSdSbq-OmeWbfEQ",
+            "object": {
+              "call_id": "06840743456d91ecbd8",
+              "caller": {
+                "name": "Ticorrian Heard",
+                "extension_id": "i7roTRA1T06uR0HiOvcCjA",
+                "extension_type": "user",
+                "user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ",
+                "timezone": "America/New_York",
+                "extension_number": 800,
+                "phone_number": "+14702763521",
+                "device_id": "ce87e7733a6d105d17d1d856955f71553da0e4edff7199ff79f00082f44f6891",
+                "device_type": "MAC_Client(6.4.6.53970)",
+                "device_name": "HW0021866",
+                "connection_type": "voip"
+              },
+              "callee": {
+                "extension_type": "pstn",
+                "extension_number": 12054786805,
+                "phone_number": "+12054786805",
+                "connection_type": "pstn_off_net"
+              },
+              "ringing_start_time": "2025-06-04T16:28:36Z",
+              "connected_start_time": "2025-06-04T16:28:44Z"
+            }
+          }
+        },
+        {
+          "phone.caller_ended": {
+            "account_id": "6o8GJUOXSdSbq-OmeWbfEQ",
+            "object": {
+              "call_id": "06840743456d91ecbd8",
+              "caller": {
+                "name": "Ticorrian Heard",
+                "extension_id": "i7roTRA1T06uR0HiOvcCjA",
+                "extension_type": "user",
+                "user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ",
+                "timezone": "America/New_York",
+                "extension_number": 800,
+                "phone_number": "+14702763521",
+                "device_id": "ce87e7733a6d105d17d1d856955f71553da0e4edff7199ff79f00082f44f6891",
+                "device_type": "MAC_Client(6.4.6.53970)",
+                "device_name": "HW0021866",
+                "connection_type": "voip"
+              },
+              "callee": {
+                "extension_type": "pstn",
+                "extension_number": 12054786805,
+                "phone_number": "+12054786805",
+                "connection_type": "pstn_off_net"
+              },
+              "ringing_start_time": "2025-06-04T16:28:36Z",
+              "call_end_time": "2025-06-04T16:29:18Z",
+              "connected_start_time": "2025-06-04T16:28:44Z",
+              "handup_result": "Call connected"
+            }
+          }
+        },
+        {
+          "phone.caller_call_log_completed": {
+            "account_id": "6o8GJUOXSdSbq-OmeWbfEQ",
+            "object": {
+              "call_logs": [
+                {
+                  "id": "98058e85-96fc-4d58-b4ae-efa26d21c4a7",
+                  "caller_user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ",
+                  "call_type": "pstn",
+                  "caller_number": "800",
+                  "caller_number_type": 1,
+                  "caller_name": "Ticorrian Heard",
+                  "callee_number": "+12054786805",
+                  "callee_number_type": 2,
+                  "callee_number_source": "external",
+                  "callee_location": "Alabama",
+                  "direction": "outbound",
+                  "duration": 34,
+                  "result": "Call connected",
+                  "date_time": "2025-06-04T16:28:36Z",
+                  "path": "pstn",
+                  "has_recording": false,
+                  "has_voicemail": false,
+                  "call_id": "06840743456d91ecbd8",
+                  "caller_did_number": "+14702763521",
+                  "caller_country_code": "1",
+                  "caller_country_iso_code": "US",
+                  "callee_did_number": "+12054786805",
+                  "callee_country_code": "1",
+                  "callee_country_iso_code": "US",
+                  "call_end_time": "2025-06-04T16:29:18Z",
+                  "department": "",
+                  "cost_center": ""
+                }
+              ],
+              "user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ"
+            }
+          }
+        },
+        {
+          "phone.caller_call_history_completed": {
+            "account_id": "6o8GJUOXSdSbq-OmeWbfEQ",
+            "object": {
+              "call_logs": [
+                {
+                  "id": "20250604-98058e85-96fc-4d58-b4ae-efa26d21c4a7",
+                  "direction": "outbound",
+                  "international": false,
+                  "event": "outgoing",
+                  "result": "connected",
+                  "node": 1,
+                  "call_id": "06840743456d91ecbd8",
+                  "connect_type": "external",
+                  "call_type": "general",
+                  "hide_caller_id": false,
+                  "caller_ext_id": "i7roTRA1T06uR0HiOvcCjA",
+                  "caller_name": "Ticorrian Heard",
+                  "caller_email": "ticorrianheardsandbox@gmail.com",
+                  "caller_did_number": "+14702763521",
+                  "caller_ext_number": "800",
+                  "caller_ext_type": "user",
+                  "caller_number_type": "zoom_pstn",
+                  "caller_device_type": "ZoomPbxPhone_MAC_Client(6.4.6.53970)",
+                  "caller_country_iso_code": "US",
+                  "caller_country_code": "1",
+                  "callee_did_number": "+12054786805",
+                  "callee_number_type": "external_pstn",
+                  "callee_country_iso_code": "US",
+                  "callee_country_code": "1",
+                  "end_to_end": false,
+                  "start_time": "2025-06-04T16:28:36Z",
+                  "answer_time": "2025-06-04T16:28:44Z",
+                  "end_time": "2025-06-04T16:29:18Z",
+                  "is_node": 1,
+                  "device_private_ip": "172.16.50.102",
+                  "device_public_ip": "38.99.100.7",
+                  "talk_time": 34,
+                  "hold_time": 0,
+                  "wait_time": 9
+                }
+              ],
+              "user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "callId": "06840759a56d91ed1b3",
+      "callLogs": [
+        {
+          "phone.caller_ringing": {
+            "account_id": "6o8GJUOXSdSbq-OmeWbfEQ",
+            "object": {
+              "call_id": "06840759a56d91ed1b3",
+              "caller": {
+                "name": "Ticorrian Heard",
+                "extension_id": "i7roTRA1T06uR0HiOvcCjA",
+                "extension_type": "user",
+                "user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ",
+                "timezone": "America/New_York",
+                "extension_number": 800,
+                "phone_number": "+14702763521",
+                "device_id": "ce87e7733a6d105d17d1d856955f71553da0e4edff7199ff79f00082f44f6891",
+                "device_type": "MAC_Client(6.4.6.53970)",
+                "device_name": "HW0021866",
+                "connection_type": "voip"
+              },
+              "callee": {
+                "extension_number": 12054786805,
+                "phone_number": "+12054786805",
+                "connection_type": "pstn_off_net"
+              },
+              "ringing_start_time": "2025-06-04T16:34:34Z"
+            }
+          }
+        },
+        {
+          "phone.caller_connected": {
+            "account_id": "6o8GJUOXSdSbq-OmeWbfEQ",
+            "object": {
+              "call_id": "06840759a56d91ed1b3",
+              "caller": {
+                "name": "Ticorrian Heard",
+                "extension_id": "i7roTRA1T06uR0HiOvcCjA",
+                "extension_type": "user",
+                "user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ",
+                "timezone": "America/New_York",
+                "extension_number": 800,
+                "phone_number": "+14702763521",
+                "device_id": "ce87e7733a6d105d17d1d856955f71553da0e4edff7199ff79f00082f44f6891",
+                "device_type": "MAC_Client(6.4.6.53970)",
+                "device_name": "HW0021866",
+                "connection_type": "voip"
+              },
+              "callee": {
+                "extension_type": "pstn",
+                "extension_number": 12054786805,
+                "phone_number": "+12054786805",
+                "connection_type": "pstn_off_net"
+              },
+              "ringing_start_time": "2025-06-04T16:34:34Z",
+              "connected_start_time": "2025-06-04T16:34:41Z"
+            }
+          }
+        },
+        {
+          "phone.caller_ended": {
+            "account_id": "6o8GJUOXSdSbq-OmeWbfEQ",
+            "object": {
+              "call_id": "06840759a56d91ed1b3",
+              "caller": {
+                "name": "Ticorrian Heard",
+                "extension_id": "i7roTRA1T06uR0HiOvcCjA",
+                "extension_type": "user",
+                "user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ",
+                "timezone": "America/New_York",
+                "extension_number": 800,
+                "phone_number": "+14702763521",
+                "device_id": "ce87e7733a6d105d17d1d856955f71553da0e4edff7199ff79f00082f44f6891",
+                "device_type": "MAC_Client(6.4.6.53970)",
+                "device_name": "HW0021866",
+                "connection_type": "voip"
+              },
+              "callee": {
+                "extension_type": "pstn",
+                "extension_number": 12054786805,
+                "phone_number": "+12054786805",
+                "connection_type": "pstn_off_net"
+              },
+              "ringing_start_time": "2025-06-04T16:34:34Z",
+              "call_end_time": "2025-06-04T16:35:04Z",
+              "connected_start_time": "2025-06-04T16:34:41Z",
+              "handup_result": "Call connected"
+            }
+          }
+        },
+        {
+          "phone.caller_call_history_completed": {
+            "account_id": "6o8GJUOXSdSbq-OmeWbfEQ",
+            "object": {
+              "call_logs": [
+                {
+                  "id": "20250604-fc5173f1-2a51-4632-b016-1505092f03b8",
+                  "direction": "outbound",
+                  "international": false,
+                  "event": "outgoing",
+                  "result": "connected",
+                  "node": 1,
+                  "call_id": "06840759a56d91ed1b3",
+                  "connect_type": "external",
+                  "call_type": "general",
+                  "hide_caller_id": false,
+                  "caller_ext_id": "i7roTRA1T06uR0HiOvcCjA",
+                  "caller_name": "Ticorrian Heard",
+                  "caller_email": "ticorrianheardsandbox@gmail.com",
+                  "caller_did_number": "+14702763521",
+                  "caller_ext_number": "800",
+                  "caller_ext_type": "user",
+                  "caller_number_type": "zoom_pstn",
+                  "caller_device_type": "ZoomPbxPhone_MAC_Client(6.4.6.53970)",
+                  "caller_country_iso_code": "US",
+                  "caller_country_code": "1",
+                  "callee_did_number": "+12054786805",
+                  "callee_number_type": "external_pstn",
+                  "callee_country_iso_code": "US",
+                  "callee_country_code": "1",
+                  "end_to_end": false,
+                  "start_time": "2025-06-04T16:34:34Z",
+                  "answer_time": "2025-06-04T16:34:41Z",
+                  "end_time": "2025-06-04T16:35:04Z",
+                  "is_node": 1,
+                  "device_private_ip": "172.16.50.102",
+                  "device_public_ip": "38.99.100.7",
+                  "talk_time": 23,
+                  "hold_time": 0,
+                  "wait_time": 8
+                }
+              ],
+              "user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ"
+            }
+          }
+        },
+        {
+          "phone.caller_call_log_completed": {
+            "account_id": "6o8GJUOXSdSbq-OmeWbfEQ",
+            "object": {
+              "call_logs": [
+                {
+                  "id": "fc5173f1-2a51-4632-b016-1505092f03b8",
+                  "caller_user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ",
+                  "call_type": "pstn",
+                  "caller_number": "800",
+                  "caller_number_type": 1,
+                  "caller_name": "Ticorrian Heard",
+                  "callee_number": "+12054786805",
+                  "callee_number_type": 2,
+                  "callee_number_source": "external",
+                  "callee_location": "Alabama",
+                  "direction": "outbound",
+                  "duration": 23,
+                  "result": "Call connected",
+                  "date_time": "2025-06-04T16:34:34Z",
+                  "path": "pstn",
+                  "has_recording": false,
+                  "has_voicemail": false,
+                  "call_id": "06840759a56d91ed1b3",
+                  "caller_did_number": "+14702763521",
+                  "caller_country_code": "1",
+                  "caller_country_iso_code": "US",
+                  "callee_did_number": "+12054786805",
+                  "callee_country_code": "1",
+                  "callee_country_iso_code": "US",
+                  "call_end_time": "2025-06-04T16:35:04Z",
+                  "department": "",
+                  "cost_center": ""
+                }
+              ],
+              "user_id": "fkMYBsQ7RgqgP9ZXVS3vxQ"
+            }
+          }
+        }
+      ]
+    }
+  ]
 }

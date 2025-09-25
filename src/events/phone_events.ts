@@ -1,5 +1,6 @@
 import { phoneS2SOAuthClient, db } from '../modules.ts';
 
+// TODO array of all available Zoom Phone Events
 let phoneEvents: any[] = [
          "phone.recording_deleted",
          "phone.caller_call_log_completed",
@@ -59,6 +60,7 @@ let phoneEvents: any[] = [
          "phone.caller_mute",
 ]
 
+//utility function for retrieving the call-id in nested object
 let findNestedKey = (obj: any, key: string): string  => {
     if (obj.hasOwnProperty(key)) {
       return obj[key];
@@ -76,6 +78,8 @@ let findNestedKey = (obj: any, key: string): string  => {
 }
 
 export const startPhoneEvents = () => {
+
+    // TODO handler that fires when receiving our phone event webhooks
     const eventHandler = ({ event, payload }: any)=>{
         console.dir({ [event]: payload}, { depth: null });
 
@@ -91,7 +95,12 @@ export const startPhoneEvents = () => {
 
     }
 
+    // TODO subcribe to each event listed in the phone events array 
     phoneEvents.forEach(event => {
         phoneS2SOAuthClient.webEventConsumer.event(event, eventHandler);
     });
 }
+
+/**
+ * Less than 100 lines of additional code to implement the Zoom Phone Call Logger!
+ */
